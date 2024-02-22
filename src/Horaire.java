@@ -15,6 +15,22 @@ public class Horaire{
         this.lesCours = new ArrayList<Cours>();
     }
 
+    public localDateTime getDateDeb() {
+        return this.dateDeb;
+    }
+
+    public localDateTime getDateFin() {
+        return this.dateFin;
+    }
+
+    public List<Salle> getLesSalles() {
+        return this.lesSalles;
+    }
+
+    public List<Cours> getLesCours() {
+        return this.lesCours;
+    }
+
     public void ajouteSalle(Salle salle) {
         this.lesSalles.add(salle);
     }
@@ -23,5 +39,21 @@ public class Horaire{
         this.lesCours.add(cours);
     }
 
-    
+    public int combienCours() {
+        return this.lesCours.size();
+    }
+
+    public int combienSalles() {
+        return this.lesSalles.size();
+    }
+
+    public int combienCoursHeure(localDateTime heureDeb, localDateTime heureFin) {
+        ArrayList<>() lesCoursHeure = new ArrayList<Cours>();
+        for (Cours coursH : lesCours) {
+            if (coursH.getHoraire().getDateDeb().equals(heureDeb) && coursH.getHoraire().getDateFin().equals(heureFin)) {
+                lesCoursHeure.add(coursH);
+            }
+        }
+        return lesCoursHeure;
+    }
 }
