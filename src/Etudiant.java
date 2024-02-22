@@ -5,6 +5,7 @@ public class Etudiant {
     private String nom;
     private int age;
     private List<Note> mesNotes;
+    private List<Groupe> mesGroupes ;
     
 
     public Etudiant(String prenom, String nom, int age) {
@@ -28,6 +29,10 @@ public class Etudiant {
 
     public List<Note> getNotes() {
         return this.mesNotes ;
+    }
+
+    public List<Groupe> getGroupes() {
+        return this.mesGroupes ;
     }
 
     public List<Note> getNotesParMatiere(Matiere matiere) {
