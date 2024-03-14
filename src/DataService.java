@@ -1,17 +1,17 @@
 import java.util.List;
 import java.util.ArrayList;
-public class Stocker {
+public class DataService {
     List<Etudiant> lesEtudiants;
     List<Note> lesNotes;
     List<Cours> lesCours;
 
-    public Stocker(List<Etudiant> lesEtudiants, List<Note> lesNotes, List<Cours> lesCours) {
+    public DataService(List<Etudiant> lesEtudiants, List<Note> lesNotes, List<Cours> lesCours) {
         this.lesEtudiants = lesEtudiants;
         this.lesNotes = lesNotes;
         this.lesCours = lesCours;
     }
 
-    public Stocker() {
+    public DataService() {
         this.lesEtudiants = new ArrayList<>();
         this.lesNotes = new ArrayList<>();
         this.lesCours = new ArrayList<>();
