@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
 //MARIN
 
 public class User {
