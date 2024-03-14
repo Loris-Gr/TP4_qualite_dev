@@ -21,4 +21,8 @@ public class Groupe {
     public List<Etudiant> getEtudiants() {
         return this.lesEtudiants;
     }
+
+    public void ajoutEtudiant(Etudiant etudiant) {
+        this.lesEtudiants.add(etudiant) ;
+    }
 }
