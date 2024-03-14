@@ -1,26 +1,18 @@
 public enum Matiere {
-    PYTHON,
-    JAVA,
-    BD,
-    MATHS,
-    BASH;
+    PYTHON ("Python"),
+    JAVA ("Java"),
+    BD ("BD"),
+    MATHS ("Maths"),
+    BASH ("Bash");
 
-    public String toString() {
-        if (this == PYTHON) {
-            return "Python";
-        }
-        else if (this == JAVA) {
-            return "Java";
-        }
-        else if (this == BD) {
-            return "BD";
-        }
-        else if (this == MATHS) {
-            return "Maths";
-        }
-        else {
-        assert this == BASH;
-            return "Bash";
-        }
+    private String nomMatiere ;
+
+
+    private Matiere(String nomMatiere) {
+        this.nomMatiere = nomMatiere ;
+    }
+
+    public String getMatiere() {
+        return this.nomMatiere;
     }
 }
