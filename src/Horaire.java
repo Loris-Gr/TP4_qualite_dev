@@ -2,7 +2,9 @@
 //MARIN
 import java.util.localDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class Horaire{
@@ -10,10 +12,12 @@ public class Horaire{
     private localDateTime dateFin;
     private List<Salle> lesSalles;
     private List<Cours> lesCours;
+    private Map<Salle, Cours> salleCours;
 
     public Horaire(String dateDebut, String dateFin) {
         this.lesSalles = new ArrayList<Salle>();
         this.lesCours = new ArrayList<Cours>();
+        Map<Salle, Cours> salleCours = new HashMap<>();
     }
 
     public localDateTime getDateDeb() {
@@ -48,7 +52,7 @@ public class Horaire{
         return this.lesSalles.size();
     }
 
-    public int combienCoursHeure(localDateTime heureDeb, localDateTime heureFin) {
+    public List<Cours> combienCoursHeure(localDateTime heureDeb, localDateTime heureFin) {
         ArrayList<>() lesCoursHeure = new ArrayList<Cours>();
         for (Cours coursH : lesCours) {
             if (coursH.getHoraire().getDateDeb().equals(heureDeb) && coursH.getHoraire().getDateFin().equals(heureFin)) {
@@ -56,5 +60,9 @@ public class Horaire{
             }
         }
         return lesCoursHeure;
+    }
+
+    public String relierCoursSalles(Salle salle, Cours cours) {
+        salleCours.putIfAbsent(salle, cours);
     }
 }
