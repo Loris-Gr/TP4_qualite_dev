@@ -6,6 +6,7 @@ public class Etudiant {
     private int age;
     private List<Note> mesNotes;
     private List<Groupe> mesGroupes ;
+    private List<Groupe> mesGroupes ;
     
 
     public Etudiant(String prenom, String nom, int age) {
@@ -27,6 +28,10 @@ public class Etudiant {
         return this.age;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public List<Note> getNotes() {
         return this.mesNotes ;
     }
@@ -43,5 +48,19 @@ public class Etudiant {
             }
         }
         return lesNotes ;
+    }
+
+    public void ajouterNote(Note note) {
+        this.mesNotes.add(note);
+    }
+
+    public void ajouterGroupe(Groupe groupe) {
+        this.mesGroupes.add(groupe);
+    }
+
+    public void supprimerGroupe(Groupe groupe) {
+        if ( this.mesGroupes.contains(groupe)) {
+            mesGroupes.remove(groupe);
+        }
     }
 }
