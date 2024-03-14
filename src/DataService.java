@@ -1,17 +1,25 @@
 import java.util.List;
 import java.util.ArrayList;
 public class DataService {
+private static DataService  instance ;
     List<Etudiant> lesEtudiants;
     List<Note> lesNotes;
     List<Cours> lesCours;
 
-    public DataService(List<Etudiant> lesEtudiants, List<Note> lesNotes, List<Cours> lesCours) {
+    public static DataService getInstance() {
+        if (instance==null) {
+            instance = new DataService();
+        }
+        return instance;
+    }
+
+    private DataService(List<Etudiant> lesEtudiants, List<Note> lesNotes, List<Cours> lesCours) {
         this.lesEtudiants = lesEtudiants;
         this.lesNotes = lesNotes;
         this.lesCours = lesCours;
     }
 
-    public DataService() {
+    private DataService() {
         this.lesEtudiants = new ArrayList<>();
         this.lesNotes = new ArrayList<>();
         this.lesCours = new ArrayList<>();
@@ -64,4 +72,4 @@ public class DataService {
             }
         return false;
         }
-}
+    }
