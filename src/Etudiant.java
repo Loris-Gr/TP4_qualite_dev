@@ -6,8 +6,6 @@ public class Etudiant {
     private int age;
     private List<Note> mesNotes;
     private List<Groupe> mesGroupes ;
-    private List<Groupe> mesGroupes ;
-    
 
     public Etudiant(String prenom, String nom, int age) {
         this.prenom = prenom ;

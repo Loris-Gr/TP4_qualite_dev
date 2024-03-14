@@ -1,5 +1,9 @@
 //localDateTime
 //MARIN
+<<<<<<< HEAD
+=======
+import java.util.localDateTime;
+>>>>>>> main
 import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
@@ -11,11 +15,16 @@ public class Horaire{
     private String dateFin;
     private List<Salle> lesSalles;
     private List<Cours> lesCours;
+<<<<<<< HEAD
     private Map<Salle, Horaire> salleCours;
+=======
+    private Map<Salle, Cours> salleCours;
+>>>>>>> main
 
     public Horaire(String dateDebut, String dateFin) {
         this.lesSalles = new ArrayList<Salle>();
         this.lesCours = new ArrayList<Cours>();
+<<<<<<< HEAD
         Map<Salle, Horaire> salleCours = new HashMap<>();
     }
 
@@ -24,6 +33,16 @@ public class Horaire{
     }
 
     public String getDateFin() {
+=======
+        Map<Salle, Cours> salleCours = new HashMap<>();
+    }
+
+    public localDateTime getDateDeb() {
+        return this.dateDeb;
+    }
+
+    public localDateTime getDateFin() {
+>>>>>>> main
         return this.dateFin;
     }
 
@@ -51,7 +70,11 @@ public class Horaire{
         return this.lesSalles.size();
     }
 
+<<<<<<< HEAD
     public List<Cours> combienCoursHeure(String heureDeb, String heureFin) {
+=======
+    public List<Cours> combienCoursHeure(localDateTime heureDeb, localDateTime heureFin) {
+>>>>>>> main
         ArrayList<>() lesCoursHeure = new ArrayList<Cours>();
         for (Cours coursH : lesCours) {
             if (coursH.getHoraire().getDateDeb().equals(heureDeb) && coursH.getHoraire().getDateFin().equals(heureFin)) {
@@ -62,6 +85,7 @@ public class Horaire{
     }
 
     public String relierCoursSalles(Salle salle, Cours cours) {
+<<<<<<< HEAD
         if (salleCours.containsValue(cours.getHoraire())) {
             return "impossible";
         }
@@ -71,4 +95,8 @@ public class Horaire{
         }
     }
 
+=======
+        salleCours.putIfAbsent(salle, cours);
+    }
+>>>>>>> main
 }
