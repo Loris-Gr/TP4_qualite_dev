@@ -25,4 +25,8 @@ public class Groupe {
     public void ajoutEtudiant(Etudiant etudiant) {
         this.lesEtudiants.add(etudiant) ;
     }
+
+    public int tailleGroupe() {
+        return lesEtudiants.size();
+    }
 }
